@@ -1,0 +1,5 @@
+.idea/
+__pycharm__/
+*.py[cod]
+venv/
+.venv/
