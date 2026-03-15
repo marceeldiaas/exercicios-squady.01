@@ -1,12 +1,16 @@
 print("------------ BEM-VINDO ------------" )
-login = str(input("LOGIN: "))
-senha = str(input("SENHA: "))
 
-if login == "admin" and senha == "1234":
-    print("ACESSO LIBERADO")
+username = input("LOGIN: ").strip().lower()
+password = input("SENHA: ")
 
-elif login == "admin":
-    print("SENHA INCORRETA")
+if  username == "admin" and password == "1234":
+    permission = "LIBERADO"
+
+elif username == "admin":
+    permission = "NEGADO"
 
 else:
-    print("ACESSO NEGADO")
+    print("Usuário não reconhecido. Acesso negado ")
+    exit()
+
+print(f"Acesso: {permission} ")

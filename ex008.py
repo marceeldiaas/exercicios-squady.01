@@ -1,27 +1,36 @@
-print("Digite os números p/ o calculo: ")
-n1 = float(input("Número 1: "))
-n2 = float(input("Número 2: "))
-opcao = str(input("Qual operador vamos utilizar: +, -, *, / "))
+try:
+    print("Digite os números p/ o calculo: ")
+    number1 = float(input("Número 1: "))
+    number2 = float(input("Número 2: "))
+    option = input("Qual operador vamos utilizar: +, -, *, / ").strip()
 
-if opcao == "+":
-    res = n1 + n2
-    print(f"A soma de {n1} + {n2} é igual a {res} ")
+    if option not in ["+","-","*","/"]:
+        print("Operador invalido! ")
+        exit()
 
-elif opcao == "-":
-    res = n1 - n2
-    print(f"A subtração de {n1} - {n2} é igual a {res} ")
+    if option == "/" and number2 == 0:
+        print("Erro: Não é possível dividir por zero!")
+        exit()
 
-elif opcao == "*":
-    res = n1 * n2
-    print(f"A multiplicação de {n1} * {n2} é igual a {res:.2f} ")
+    if option == "+":
+        result = number1 + number2
+        choice = "soma"
 
-elif opcao == "/" and n2 == 0:
-    print(f"Não é possível realizar este calculo matematico! ")
+    elif option == "-":
+        result = number1 - number2
+        choice = "subtração"
 
-elif opcao == "/":
-    res = n1 / n2
-    print(f"A divisão entre {n1} / {n2} é igual a {res:.2f}")
+    elif option == "*":
+        result = number1 * number2
+        choice = "multiplicação"
 
-else:
+    elif option == "/":
+        result = number1 / number2
+        choice = "divisão"
+
+    print(f"A {choice} entre {number1} {option} {number2} é igual a {result:.2f}")
+
+except ZeroDivisionError:
     print("Operador invalido! ")
+
 
